@@ -11,12 +11,12 @@ body {
 .gameContainer {
     background-image: url(bg.png);
     background-repeat: repeat-x; /* التأكد من أن الخلفية تتكرر أفقياً */
-    background-size: auto 100%; /* الحفاظ على ارتفاع الخلفية بنسبة 100% */
+    background-size: auto 100%; /* تغطية الارتفاع بالكامل */
     width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
-    animation: scrollBg 10s linear infinite; /* زيادة المدة إلى 10 ثوانٍ */
+    animation: scrollBg 50s linear infinite; /* زيادة المدة إلى 12 ثانية */
 }
 
 @keyframes scrollBg {
@@ -24,7 +24,7 @@ body {
         background-position: 0 0; /* البداية من اليسار */
     }
     to {
-        background-position: -200vw 0; /* النهاية عند -200vw (ضعف عرض الشاشة) */
+        background-position: -3840px 0; /* النهاية عند -3840px (عرض الصورة) */
     }
 }
 .dino {

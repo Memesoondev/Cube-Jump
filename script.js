@@ -1,5 +1,5 @@
-score = 0;
-cross = true;
+let score = 0;
+let cross = true;
 let gameOverFlag = false; // منع تكرار صوت الاصطدام
 
 let audio = new Audio('music.mp3');
@@ -35,6 +35,7 @@ setInterval(() => {
     let dino = document.querySelector('.dino');
     let gameOver = document.querySelector('.gameOver');
     let obstacle = document.querySelector('.obstacle');
+    let gameContainer = document.getElementById('gameContainer'); // الحصول على عنصر الخلفية
     
     let dinoRect = dino.getBoundingClientRect();
     let obstacleRect = obstacle.getBoundingClientRect();
@@ -52,6 +53,10 @@ setInterval(() => {
         audio.pause(); // إيقاف الموسيقى عند الاصطدام
         gameOverFlag = true;
         clearInterval(scoreInterval); // إيقاف تسجيل النقاط بعد الاصطدام
+
+        // إيقاف حركة الخلفية
+        gameContainer.style.animation = 'none'; // إزالة الحركة
+
         document.addEventListener('click', restartGame);
     }
 }, 10);
